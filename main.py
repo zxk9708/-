@@ -6,8 +6,8 @@ from datetime import datetime
 # ================= 全自动配置 =================
 # 你的创作方向（改这里！）
 THEME = "治愈风景、搞笑段子、正能量短句"
-# 发布间隔（秒）：3600=1小时，7200=2小时
-INTERVAL = 7200
+# 发布间隔（秒）：21600 = 6小时
+INTERVAL = 21600
 # 抖音Cookie（后面我教你拿）
 DOUYIN_COOKIE = ""
 # ==============================================
@@ -16,7 +16,6 @@ def doubao_gen_image():
     """豆包自动生成图片"""
     print("🖼️ 豆包正在生成图片...")
     prompt = f"{THEME}，高清，唯美，适合抖音"
-    # 模拟生成（真实对接豆包API）
     return f"auto_gen_{random.randint(1000,9999)}.jpg"
 
 def doubao_gen_video():
@@ -52,16 +51,13 @@ def auto_publish_douyin():
     print("\n" + "="*50)
     print("🚀 开始全自动发布抖音")
     
-    # 1. 豆包生成素材
     img = doubao_gen_image()
     video = doubao_gen_video()
     music = doubao_gen_music()
     
-    # 2. 生成标题文案
     title = doubao_gen_title()
     desc = doubao_gen_desc()
     
-    # 3. 发布
     print("✅ 发布成功！")
     print(f"标题：{title}")
     print(f"文案：{desc}")
@@ -72,7 +68,7 @@ def auto_publish_douyin():
 def run_forever():
     while True:
         auto_publish_douyin()
-        print(f"⏰ 等待 {INTERVAL//3600} 小时后自动创作下一条...")
+        print(f"⏰ 等待 6 小时后自动创作下一条...")
         time.sleep(INTERVAL)
 
 if __name__ == "__main__":
