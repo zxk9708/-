@@ -1,16 +1,13 @@
-import time
 import random
 from datetime import datetime
 
-# ================= 高质量安全全自动抖音发布 =================
+# ================= 配置 =================
 THEME = "治愈风景、生活日常、正能量短句"
-GENERATE_INTERVAL = 30  # 3小时生成一条（推荐）
-# =============================================================
+# ========================================
 
 def create_high_quality_content():
-    """豆包高质量全自动生成内容（安全、不封号）"""
+    """高质量安全内容生成"""
     
-    # 高质量标题（爆款风格）
     titles = [
         f"治愈系日常｜{THEME}｜看完心情变好✨",
         f"生活碎片｜{THEME}｜温柔治愈每一天",
@@ -18,7 +15,6 @@ def create_high_quality_content():
         f"每日治愈｜{THEME}｜安静美好｜解压必备"
     ]
     
-    # 高质量文案
     descs = [
         f"""生活很慢，世界很暖
 {THEME}
@@ -43,24 +39,27 @@ def create_high_quality_content():
     desc = random.choice(descs)
     time_now = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    print("\n" + "="*60)
-    print("✅ 高质量内容已全自动生成（安全、不封号）")
-    print(f"⏰ 时间：{time_now}")
-    print(f"🎬 视频：豆包AI高质量生成")
-    print(f"🖼️ 封面：高清治愈风格")
-    print(f"🎵 音乐：热门治愈BGM")
-    print(f"📝 标题：{title}")
-    print(f"💬 文案：{desc}")
-    print("="*60 + "\n")
+    # 生成内容并保存到 output.txt
+    result = f"""
+【{time_now} 全自动生成】
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎬 视频：治愈风景 / 生活日常
+🖼️ 封面：高清治愈风格
+🎵 音乐：热门治愈BGM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 标题：
+{title}
 
-    return title, desc
+💬 文案：
+{desc}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"""
 
-def run_safe_forever():
-    while True:
-        create_high_quality_content()
-        hours = GENERATE_INTERVAL // 3600
-        print(f"⏱ {hours}小时后自动生成下一条高质量内容...\n")
-        time.sleep(GENERATE_INTERVAL)
+    with open("output.txt", "w", encoding="utf-8") as f:
+        f.write(result)
 
+    print("✅ 内容已生成 → output.txt")
+
+# 主程序（只运行一次）
 if __name__ == "__main__":
-    run_safe_forever()
+    create_high_quality_content()
