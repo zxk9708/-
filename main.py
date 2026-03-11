@@ -4,7 +4,7 @@ from datetime import datetime
 
 # ================= 高质量安全全自动抖音发布 =================
 THEME = "治愈风景、生活日常、正能量短句"
-GENERATE_INTERVAL = 60  # 6小时生成一条（推荐）
+GENERATE_INTERVAL = 30  # 3小时生成一条（推荐）
 # =============================================================
 
 def create_high_quality_content():
