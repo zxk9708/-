@@ -6,7 +6,7 @@ from datetime import datetime
 # ================= 全自动配置 =================
 # 你的创作方向（改这里！）
 THEME = "治愈风景、搞笑段子、正能量短句"
-# 发布间隔（秒）：21600 = 6小时
+# 发布间隔（秒）：60
 INTERVAL = 21600
 # 抖音Cookie（后面我教你拿）
 DOUYIN_COOKIE = "sessionid=f12a2e84375c7badf3d23a94eacd46a7"
