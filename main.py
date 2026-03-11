@@ -9,7 +9,8 @@ THEME = "治愈风景、搞笑段子、正能量短句"
 # 发布间隔（秒）：21600 = 6小时
 INTERVAL = 21600
 # 抖音Cookie（后面我教你拿）
-DOUYIN_COOKIE = ""
+DOUYIN_COOKIE = "sessionid=f12a2e84375c7badf3d23a94eacd46a7"
+
 # ==============================================
 
 def doubao_gen_image():
