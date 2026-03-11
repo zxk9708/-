@@ -1,4 +1,4 @@
-name: 抖音内容自动生成
+name: 自动生成
 on:
   workflow_dispatch:
 
@@ -7,12 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 运行生成
+      - name: 运行
         run: python main.py
-      - name: 保存文件
-        run: |
-          git config --global user.name "auto"
-          git config --global user.email "auto@auto.com"
-          git add output.txt
-          git commit -m "自动更新内容"
-          git push
