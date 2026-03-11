@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的豆包助手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .box {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: none;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0066cc;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>我的豆包助手</h1>
+        <textarea placeholder="输入你想问豆包的问题..."></textarea>
+        <button onclick="ask()">发送</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function ask() {
+            let text = document.querySelector("textarea").value;
+            if (!text) {
+                alert("请输入问题");
+                return;
+            }
+            document.getElementById("result").innerText = "豆包正在思考...";
+            setTimeout(() => {
+                document.getElementById("result").innerText = "你说：" + text + "\n\n豆包：我已经收到你的问题啦！";
+            }, 800);
+        }
+    </script>
+</body>
+</html>
